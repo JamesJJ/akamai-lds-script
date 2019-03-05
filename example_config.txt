@@ -1,0 +1,38 @@
+{
+  "aggregationDetails": {
+    "deliveryFrequency": {
+      "id": "6"
+    },
+    "type": "byLogArrival"
+  },
+  "contactDetails": {
+    "contact": {
+      "id": "XXXX-Your-Contact-ID-XXXX"
+    },
+    "mailAddresses": [
+      "XXXX-Your-Email@example.com"
+    ]
+  },
+  "deliveryDetails": {
+    "directory": "uploads/${tag}",
+    "login": "XXXX_your_sftp_user_XXXX",
+    "machine": "XXXX_your_sftp_server_address",
+    "type": "sftpu",
+    "password":"XXXX_your_sftp_users_password_XXXX"
+  },
+  "encodingDetails": {
+    "encoding": {
+      "id": "3"
+    }
+  },
+  "logFormatDetails": {
+    "logFormat": {
+      "id": "86"
+    },
+    "logIdentifier": "${tag}__"
+  },
+  "messageSize": {
+    "id": "2"
+  },
+  "startDate": "2019-03-06"
+}
