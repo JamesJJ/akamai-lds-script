@@ -161,7 +161,7 @@ else:
 
               2] Remove not owned from complete_list.txt and save as my_list.txt
 
-              2b] ./lds_script.py show < my_list.txt
+                2b] ./lds_script.py show   ( to help find e.g. your contactDetails.contact.id from an existing config )
 
               3] ./lds_script.py set my_config.txt < my_list.txt
 
