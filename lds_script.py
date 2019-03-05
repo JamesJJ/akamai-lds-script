@@ -63,25 +63,12 @@ def cp_num_from_ls_element(e):
 def show_all_configs():
 
     s, baseurl = api_session()
-    ls = s.get(urljoin(baseurl, '/lds-api/v3/log-sources'))
     lc = s.get(urljoin(baseurl, '/lds-api/v3/log-sources/cpcode-products/log-configurations'))
 
-    for log_source in filter(lambda x: (x.get('type', '') == 'cpcode-products'), ls.json()):
-        cp = log_source['cpCode']
-        cp_re = re.search(r'^([0-9]+)($|[\s,\-]+)([A-Za-z0-9_\.\-]+)?', cp.strip())
-        if not cp_re:
-            continue
-        print('=== STARTING: {}'.format(cp))
+    for log_config in lc.json():
+        print('=== STARTING: {}'.format(cp_num_from_lc_element(log_config)))
 
-        existing_config = list(filter(
-            lambda x: (cp_re.group(1) == cp_num_from_lc_element(x)),
-            lc.json()
-        ))
-        if (len(existing_config) == 1):
-            print(' = Existing Config:\n{}\n\n'.format(remove_key(existing_config[0], 'links')))
-        elif (len(existing_config) > 1):
-            print('Unable to determine existing config')
-            sys.exit(1)
+        print(' = Existing Config:\n{}\n\n'.format(remove_key(log_config, 'links')))
 
 
 def set_from_configfile(f):
