@@ -14,5 +14,13 @@ https://developer.akamai.com/api/core_features/log_delivery_service/v3.html
 
 (the config file is the request body to create/update Log Configuration APIs, templated)
 
+## Known issues
+
+1] Ensure your `edgegrid-python` is at least version 1.1.1 (previous versions had some bugs):
+
+```
+   pip install --upgrade edgegrid-python
+```
+
 
 
