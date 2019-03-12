@@ -27,7 +27,7 @@
   },
   "logFormatDetails": {
     "logFormat": {
-      "id": "86"
+      "id": "75"
     },
     "logIdentifier": "${tag}__"
   },
